@@ -3,7 +3,7 @@ var selectAll = () => {};
 
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var db = require("../database-mysql");
-// var Item = require('../database-mongo/Item.model.js');
+var Item = require('../database-mongo/Item.model.js');
 
 // UNCOMMENT IF USING MYSQL WITH CALLBACKS
 // var selectAll = function (req, res) {
@@ -17,15 +17,27 @@ var selectAll = () => {};
 // };
 
 // UNCOMMENT IF USING MONGOOSE WITH PROMISES
-// var selectAll = function (req, res) {
-//   Item.find({})
-//     .then((items) => {
-//       res.status(200).send(items);
-//     })
-//     .catch((error) => {
-//       res.status(500).send(error);
-//     });
-// };
+var selectAll = function (req, res) {
+  Item.find({})
+    .then((items) => {
+      res.status(200).send(items);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+};
+
+var insert = function (req, res) {
+    Item.create(req.body)
+      .then((data) => {
+          console.log(req.body)
+          console.log(data)
+        res.status(200).send(data);
+      })
+      .catch((error) => {
+        res.status(500).send(error);
+      });
+  };
 
 // UNCOMMENT IF USING MONGOOSE WITH PROMISES & ASYNC AWAIT
 // var selectAll = async function (req, res) {
@@ -37,4 +49,4 @@ var selectAll = () => {};
 //   }
 // };
 
-module.exports = { selectAll };
+module.exports = { selectAll , insert };
