@@ -1,7 +1,7 @@
 import React from 'react';
 const User =(props) => {
 return(
-    <div>
+    <div  style={{border: '7px solid'}}>
     <div>
 <p>Username</p>
 <input type="text" name="name" onChange={props.change} />
@@ -10,7 +10,8 @@ return(
 <p>Password</p>
 <input type="password" name="password" onChange={props.change}/>
 </div>
-<button onClick={props.Add}>CreatAccount</button>
+<button onClick={props.Add}>Click To confirm your sign up</button>
+<button onClick={props.Page}>CreatAccount</button>
 
 </div>
 )
