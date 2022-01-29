@@ -1,5 +1,5 @@
 // DELETE THIS LINE
-var selectAll = () => {};
+
 
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var db = require("../database-mysql");
@@ -39,6 +39,15 @@ var insert = function (req, res) {
       });
   };
 
+  var deletePro=(req,res)=>{
+    var id=req.params.id
+    Item.findByIdAndRemove(id)
+    .then(()=>{
+      res.send('deleted')
+    }).catch((err)=>{
+      res.send(err)
+    })
+  }
 // UNCOMMENT IF USING MONGOOSE WITH PROMISES & ASYNC AWAIT
 // var selectAll = async function (req, res) {
 //   try {
@@ -49,4 +58,4 @@ var insert = function (req, res) {
 //   }
 // };
 
-module.exports = { selectAll , insert };
+module.exports = { selectAll , insert, deletePro};

@@ -6,6 +6,8 @@ const itemSchema = new mongoose.Schema({
   email: String,
   password: String,
   image: String,
+  description: String,
+  productname: String,
 });
 
 const Item = mongoose.model("Item", itemSchema);

@@ -1,3 +1,5 @@
 body {
-    background-image: url("https://www.winmyrfp.com/assets/img/backgrounds/1@2x.jpg")
+    background-image: url("https://www.winmyrfp.com/assets/img/backgrounds/1@2x.jpg");
+    background-size: cover;
+    
 }
